@@ -1,0 +1,289 @@
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+:root {
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-text-inverse: #f1f5f9;
+  --color-primary: #6366f1;
+  --color-accent: #06b6d4;
+
+  --gradient-hero: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: #f8fafc;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  background: var(--gradient-hero);
+  color: var(--color-text-inverse);
+  padding: 6rem 0 5rem;
+  text-align: center;
+}
+
+.hero__greeting {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__role {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
+
+.hero__tagline {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__cta a {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-text-inverse);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.hero__cta a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about {
+  padding: 4rem 0;
+  background: var(--color-surface);
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 750px;
+  margin-bottom: 1.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skills li {
+  background: #eef2ff;
+  color: var(--color-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PROYECTOS
+   ========================================================= */
+.projects {
+  padding: 4rem 0;
+  background: #f1f5f9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--color-text-light);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.card__tech span {
+  background: #f1f5f9;
+  color: var(--color-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card__links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.card__link--primary {
+  color: var(--color-accent) !important;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact {
+  padding: 4rem 0;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.contact p {
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.contact__links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact__links a {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: var(--color-bg);
+  color: var(--color-text-inverse);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.footer__source a {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 600px) {
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .about, .projects, .contact {
+    padding: 3rem 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
